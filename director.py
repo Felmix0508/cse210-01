@@ -1,33 +1,16 @@
-from game.hilo import Hilo
-
-
+from game.dealer import Dealer
+import random
 class Director:
-    """A person who directs the game. 
     
-    The responsibility of a Director is to control the sequence of play.
-
-    Attributes:
-        dice (List[Die]): A list of Die instances.
-        is_playing (boolean): Whether or not the game is being played.
-        score (int): The score for one round of play.
-        total_score (int): The score for the entire game.
-    """
 
     def __init__(self):
-        """Constructs a new Director.
-        
-        Args:
-            self (Director): an instance of Director.
-        """
         self.game = []
         self.is_playing = True
-        self.score = 0
-        self.total_score = 0
-
-        for i in range(5):
-            hilo = Hilo()
-            self.game.append(hilo)
-
+        self.score = 300
+        self.first_card = 0
+        self.second_card = 0
+        self.points = 0
+        
     def start_game(self):
         """Starts the game by running the main game loop.
         
@@ -38,39 +21,30 @@ class Director:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
-
+            
     def get_inputs(self):
-        """Ask the user if they want to roll.
-
-        Args:
-            self (Director): An instance of Director.
-        """
-        player_card = input("Higher or lower? [h/l] ")
-        self.is_playing = (player_card == "h" or player_card == "l")
-        if player_card != "h":
-            self.score = 100 - self.total_score
-        elif player_card != "l":
-            self.score = 75 - self.total_score
+        self.cards = random.randint(1, 13)
+        self.number_card = random.randint(1, 13)
+        for i in range(1):
+            print(f"The card is: {self.number_card}")
+        self.higher_or_lower = input("Higher or lower? [h/l] ")
+        if self.higher_or_lower == "h":
+            self.first_card >= self.second_card
+            self.points += 100
+        elif self.higher_or_lower == "l":
+            self.first_card <= self.second_card
+            self.points -= 75
+        else:
+            0
+        print(f"Next card : {self.cards}")
+        print(f"Your score is: {self.points}")
+        play_again = input("Play again? [y/n]")
+        self.is_playing = (play_again == 'y')
+        print()
+        
     def do_updates(self):
-        if not self.is_playing:
-            return True
 
-        for i in range(len(self.game)):
-            hilo = self.game[i]
-            hilo.roll()
-            self.score += hilo.points 
-        self.total_score += self.score
-
+        None
     def do_outputs(self):
         
-        if not self.is_playing:
-            return False
-        
-        values = ""
-        for i in range(len(self.game)):
-            hilo = self.game[i]
-            values += f"{hilo.value} "
-
-        print(f"Next card was: {values}")
-        print(f"Your score is: {self.total_score}\n")
-        self.is_playing == (self.score > 0)
+        None
