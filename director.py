@@ -1,4 +1,4 @@
-from game.dealer import Dealer
+from dealer import Dealer
 import random
 class Director:
     
