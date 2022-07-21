@@ -36,18 +36,3 @@ python spaceinvaders.py
 
 **MacOS Mojave**: You need to use Python 3.7.2 or greater: [Source](https://github.com/pygame/pygame/issues/555)
 
-## Demo
-
-[![Space Invaders](http://img.youtube.com/vi/_2yUP3WMDRc/0.jpg)](http://www.youtube.com/watch?v=_2yUP3WMDRc)
-
-## Notable Forks
-
-- [AI research project where four types of agents control the ship and play the game](https://github.com/scott-pickthorn/Space_Invaders)
-- [NEAT program that evolves to beat the game](https://github.com/lairsonm/neat-in-space-invaders)
-
-## Contact
-
-Thanks for checking out my game and I hope you enjoy it! Feel free to contact me.
-
-- Lee Robinson
-- lrobinson2011@gmail.com
