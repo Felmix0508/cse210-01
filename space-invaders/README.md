@@ -33,6 +33,3 @@ python spaceinvaders.py
 ```
 
 **Note:** If you're using Python 3, replace the command "python" with "python3"
-
-**MacOS Mojave**: You need to use Python 3.7.2 or greater: [Source](https://github.com/pygame/pygame/issues/555)
-
